@@ -168,10 +168,10 @@ int B(char wordB[], char txtB[]) {
         }
         i = j;
     }
-    printf("%s", ans2);
-//    for (i = 0; i < strlen(ans2) - 1; i++) {
-//        printf("%c", ans2[i]);
-//    }
+//    printf("%s", ans2);
+    for (i = 0; i < strlen(ans2) - 1; i++) {
+        printf("%c", ans2[i]);
+    }
 //    word[0] = '\0';
 //    txt[0] = '\0';
     ans[0] = '\0';
@@ -310,8 +310,8 @@ int main() {
 
 
     A(wordA, txtA);
-//    B(wordB, txtB);
-//    C(wordC, txtC);
+    B(wordB, txtB);
+    C(wordC, txtC);
 
 
 }
