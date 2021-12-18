@@ -249,7 +249,7 @@ int C(char wordC[], char txtC[]) {
     ansC[0] = '\0';
     ansC2[0] = '\0';
     tmpstrC[0] = '\0';
-    printf("\n");
+//    printf("\n");
 }
 
 int main() {
