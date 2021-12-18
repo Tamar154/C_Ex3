@@ -55,7 +55,7 @@ int A(char wordA[], char txtA[]) {
         }
     }
 
-    ans[size] = '\0';
+//    ans[size] = '\0';
     for (i = 0; i < strlen(ans) - 1; i++) {
         printf("%c", ans[i]);
     }
@@ -310,9 +310,8 @@ int main() {
 
 
     A(wordA, txtA);
-    B(wordB, txtB);
-    C(wordC, txtC);
+//    B(wordB, txtB);
+//    C(wordC, txtC);
 
 
 }
-
