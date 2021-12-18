@@ -142,7 +142,7 @@ int B(char wordB[], char txtB[]) {
     }
 
     char ans2B[TXT];
-//    ans2[0] = '\0';
+    ans2B[0] = '\0';
     char temp[TXT];
     for (i = 0; i < strlen(ansB); i++) {
 //        strcpy(temp, "");
