@@ -25,7 +25,7 @@ int A(char wordA[], char txtA[]) {
     int txtcounter;
     int i = 0;
     char tmpstr[TXT];
-    char ans[TXT];
+    char ansA[TXT];
     while (i < strlen(wordA)) {
         counter += letterDist(wordA[i]);
         i++;
@@ -48,21 +48,21 @@ int A(char wordA[], char txtA[]) {
             }
             if (txtcounter == counter) {
                 size += tempcounter;
-                strcat(ans, tmpstr);
-                strcat(ans, "~");
+                strcat(ansA, tmpstr);
+                strcat(ansA, "~");
 //                printf("%s~", tmpstr);
             }
         }
     }
 
 //    ans[size] = '\0';
-    for (i = 0; i < strlen(ans) - 1; i++) {
-        printf("%c", ans[i]);
+    for (i = 0; i < strlen(ansA) - 1; i++) {
+        printf("%c", ansA[i]);
     }
     printf("\n");
 //    word[0] = '\0';
 //    txt[0] = '\0';
-    ans[0] = '\0';
+    ansA[0] = '\0';
     tmpstr[0] = '\0';
     return 1;
 }
@@ -110,8 +110,8 @@ int B(char wordB[], char txtB[]) {
     int counter = 0;
     int txtcounter;
     i = 0;
-    char tmpstr[TXT];
-    char ans[TXT];
+    char tmpstrB[TXT];
+    char ansB[TXT];
     while (i < strlen(regular)) {
         counter += letterDist(regular[i]);
         i++;
@@ -121,62 +121,62 @@ int B(char wordB[], char txtB[]) {
     for (i = 0; i < strlen(txtB); i++) {
         int tempcounter = 0;
         if (letterDist(txtB[i]) != 0) {
-            tmpstr[0] = '\0';
+            tmpstrB[0] = '\0';
             txtcounter = 0;
             int j = i;
             int k = 0;
             while (txtcounter < counter && j < strlen(txtB)) { // *** &&->
-                strncat(tmpstr, &txtB[j], 1);
-                txtcounter += letterDist(tmpstr[k]);
+                strncat(tmpstrB, &txtB[j], 1);
+                txtcounter += letterDist(tmpstrB[k]);
                 j++;
                 k++;
                 tempcounter++;
             }
             if (txtcounter == counter) {
                 size += tempcounter;
-                strcat(ans, tmpstr);
-                strcat(ans, "~");
+                strcat(ansB, tmpstrB);
+                strcat(ansB, "~");
 //                printf("%s~", tmpstr);
             }
         }
     }
 
-    char ans2[TXT];
-    ans2[0] = '\0';
+    char ans2B[TXT];
+//    ans2[0] = '\0';
     char temp[TXT];
-    for (i = 0; i < strlen(ans); i++) {
+    for (i = 0; i < strlen(ansB); i++) {
 //        strcpy(temp, "");
         temp[0] = '\0';
         int k = 0;
         int j = i;
-        while (ans[j] != '~') {
-            if (letterDist(ans[j]) != 0) {
-                temp[k] = ans[j];
+        while (ansB[j] != '~') {
+            if (letterDist(ansB[j]) != 0) {
+                temp[k] = ansB[j];
                 k++;
             }
             j++;
         }
         if (strcmp(temp, reverse) == 0) {
-            strcat(ans2, temp);
-            strcat(ans2, "~");
+            strcat(ans2B, temp);
+            strcat(ans2B, "~");
             strcpy(temp, "");
         }
         if (strcmp(temp, regular) == 0) {
-            strcat(ans2, temp);
-            strcat(ans2, "~");
+            strcat(ans2B, temp);
+            strcat(ans2B, "~");
             strcpy(temp, "");
         }
         i = j;
     }
 //    printf("%s", ans2);
-    for (i = 0; i < strlen(ans2) - 1; i++) {
-        printf("%c", ans2[i]);
+    for (i = 0; i < strlen(ans2B) - 1; i++) {
+        printf("%c", ans2B[i]);
     }
 //    word[0] = '\0';
 //    txt[0] = '\0';
-    ans[0] = '\0';
-    ans2[0] = '\0';
-    tmpstr[0] = '\0';
+    ansB[0] = '\0';
+    ans2B[0] = '\0';
+    tmpstrB[0] = '\0';
     printf("\n");
 }
 
@@ -185,8 +185,8 @@ int C(char wordC[], char txtC[]) {
     int counter = 0;
     int txtcounter;
     int i = 0;
-    char tmpstr[TXT];
-    char ans[TXT];
+    char tmpstrC[TXT];
+    char ansC[TXT];
     while (i < strlen(wordC)) {
         counter += letterDist(wordC[i]);
         i++;
@@ -196,35 +196,35 @@ int C(char wordC[], char txtC[]) {
     for (i = 0; i < strlen(txtC); i++) {
         int tempcounter = 0;
         if (letterDist(txtC[i]) != 0) {
-            tmpstr[0] = '\0';
+            tmpstrC[0] = '\0';
             txtcounter = 0;
             int j = i;
             int k = 0;
             while (txtcounter < counter && j < strlen(txtC)) { // *** &&->
-                strncat(tmpstr, &txtC[j], 1);
-                txtcounter += letterDist(tmpstr[k]);
+                strncat(tmpstrC, &txtC[j], 1);
+                txtcounter += letterDist(tmpstrC[k]);
                 j++;
                 k++;
                 tempcounter++;
             }
             if (txtcounter == counter) {
                 size += tempcounter;
-                strcat(ans, tmpstr);
-                strcat(ans, "~");
+                strcat(ansC, tmpstrC);
+                strcat(ansC, "~");
 //                printf("%s~", tmpstr);
             }
         }
     }
 
 
-    char ans2[TXT];
-    for (i = 0; i < strlen(ans); i++) {
+    char ansC2[TXT];
+    for (i = 0; i < strlen(ansC); i++) {
         int j = i;
         counter = 0;
         int wordCounter = 0;
-        while (ans[j] != '~') {
+        while (ansC[j] != '~') {
             wordCounter++;
-            if (strchr(wordC, ans[j]) == NULL) {
+            if (strchr(wordC, ansC[j]) == NULL) {
                 counter = 0;
                 j++;
                 wordCounter++;
@@ -235,20 +235,20 @@ int C(char wordC[], char txtC[]) {
             }
         }
         if (counter == wordCounter) {
-            strncat(ans2, &ans[i], counter);
+            strncat(ansC2, &ansC[i], counter);
 //            if (ans2[j] != '~')
-            strcat(ans2, "~");
+            strcat(ansC2, "~");
         }
         i = j;
     }
-    for (i = 0; i < strlen(ans2) - 1; i++) {
-        printf("%c", ans2[i]);
+    for (i = 0; i < strlen(ansC2) - 1; i++) {
+        printf("%c", ansC2[i]);
     }
 //    word[0] = '\0';
 //    txt[0] = '\0';
-    ans[0] = '\0';
-    ans2[0] = '\0';
-    tmpstr[0] = '\0';
+    ansC[0] = '\0';
+    ansC2[0] = '\0';
+    tmpstrC[0] = '\0';
     printf("\n");
 }
 
