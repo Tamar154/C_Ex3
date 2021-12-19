@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <math.h>
 #include <string.h>
 
 #define TXT 1024
 #define WORD 30
-//#define max(x, y) (((x) > (y)) ? (x) : (y))
-//#define min(x, y) (((x) < (y)) ? (x) : (y))
+
 
 int letterDist(char c) {
     //capital letters
@@ -50,18 +48,15 @@ int A(char wordA[], char txtA[]) {
                 size += tempcounter;
                 strcat(ans, tmpstr);
                 strcat(ans, "~");
-//                printf("%s~", tmpstr);
             }
         }
     }
 
-//    ans[size] = '\0';
+
     for (i = 0; i < strlen(ans) - 1; i++) {
         printf("%c", ans[i]);
     }
     printf("\n");
-//    word[0] = '\0';
-//    txt[0] = '\0';
     ans[0] = '\0';
     tmpstr[0] = '\0';
     return 1;
@@ -86,8 +81,6 @@ int B(char word[], char txt[]) {
         }
     }
     strcpy(reverse, regular);
-//    printf("%s\n", regular);
-//    printf("%s\n", reverse);
     int i = 0;
     int j = (int) strlen(reverse) - 1;
 
@@ -98,8 +91,6 @@ int B(char word[], char txt[]) {
         i++;
         j--;
     }
-//    printf("%s\n", regular);
-//    printf("%s", reverse);
 
     // Gematria of word:
     int counter = 0;
@@ -118,7 +109,7 @@ int B(char word[], char txt[]) {
         if (letterDist(txt[i]) != 0) {
             tmpstr[0] = '\0';
             txtcounter = 0;
-            int j = i;
+             j = i;
             int k = 0;
             while (txtcounter < counter && j < strlen(txt)) { // * &&->
                 strncat(tmpstr, &txt[j], 1);
@@ -131,27 +122,9 @@ int B(char word[], char txt[]) {
                 size += tempcounter;
                 strcat(ans, tmpstr);
                 strcat(ans, "~");
-//                printf("%s~", tmpstr);
             }
         }
     }
-//    printf("%s", ans);
-
-//    for (i = 0; i < strlen(ans); i++) {
-//        int val = letterDist(ans[i]);
-//        if (ans[i] != '~') {
-//            if ((ans[i] >= 65 && ans[i] <= 90)) { // upper
-//                ans[i] = upper[26 - val];
-//            }
-//            if (ans[i] >= 97 && ans[i] <= 122) { // lower
-//                ans[i] = lower[26 - val];
-//            }
-//        }
-//    }
-
-//    printf("%s\n", ans);
-
-//    char ans2[] = {'\0'};
     char ans2[TXT] = {'\0'};
     char temp[TXT] = {'\0'};
     size = 0;
@@ -161,11 +134,9 @@ int B(char word[], char txt[]) {
         int k = 0;
         j = i;
         while (ans[j] != '~') {
-//            if (letterDist(ans[j]) != 0) {
             temp[k] = ans[j];
             k++;
             tempSize++;
-//            }
             j++;
         }
         if (strcmp(temp, reverse) == 0) {
@@ -185,11 +156,6 @@ int B(char word[], char txt[]) {
     ans2[size-1] = '\0';
 
     printf("%s",ans2);
-//    for (i = 0; i < strlen(ans2) - 1; i++) {
-//        printf("%c", ans2[i]);
-//        ans2[i] = '\0';
-//    }
-
 }
 
 int C(char wordC[], char txtC[]) {
@@ -223,7 +189,6 @@ int C(char wordC[], char txtC[]) {
                 size += tempcounter;
                 strcat(ans, tmpstr);
                 strcat(ans, "~");
-//                printf("%s~", tmpstr);
             }
         }
     }
@@ -240,7 +205,6 @@ int C(char wordC[], char txtC[]) {
                 counter = 0;
                 j++;
                 wordCounter++;
-//                break;
             } else {
                 counter++;
                 j++;
@@ -248,7 +212,6 @@ int C(char wordC[], char txtC[]) {
         }
         if (counter == wordCounter) {
             strncat(ans2, &ans[i], counter);
-//            if (ans2[j] != '~')
             strcat(ans2, "~");
         }
         i = j;
@@ -256,44 +219,16 @@ int C(char wordC[], char txtC[]) {
     for (i = 0; i < strlen(ans2) - 1; i++) {
         printf("%c", ans2[i]);
     }
-//    word[0] = '\0';
-//    txt[0] = '\0';
+
     ans[0] = '\0';
     ans2[0] = '\0';
     tmpstr[0] = '\0';
-//    printf("\n");
 }
 
 int main() {
     int i = 0;
     char txt[TXT];
     char word[WORD];
-//    char bt1 = 92;  // backslash
-//    char bt2 = 116; // t
-//    char bt3 = 110; // n
-//    char bt4 = 126; // ~
-
-//    scanf("%[^\n^\t^ ]s", txt);
-//    returns a pointer to the first occurrence of the character c in the string str, or NULL if the character is not found.
-
-//    printf("%s", word);
-//    while (i < WORD) {
-//        if (word[i] == bt1) {
-//            i++;
-//            if (word[i] == bt2) {
-//                word[i - 1] = '\0';
-//                word[i] = '\0';
-//            }
-//            if (word[i] == bt3) {
-//                word[i - 1] = '\0';
-//                word[i] = '\0';
-//            }
-//        }
-//        if (word[i] == ' ') {
-//            word[i] = '\0';
-//        }
-//        i++;
-//    }
 
     fgets(word, WORD, stdin);
     while (i < WORD) {
