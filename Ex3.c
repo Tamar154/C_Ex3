@@ -17,7 +17,7 @@ int letterDist(char c) {
     return 0;
 }
 
-int A(char wordA[], char txtA[]) {
+void A(char wordA[], char txtA[]) {
     printf("Gematria Sequences: ");
     int counter = 0;
     int txtcounter;
@@ -59,11 +59,10 @@ int A(char wordA[], char txtA[]) {
     printf("\n");
     ans[0] = '\0';
     tmpstr[0] = '\0';
-    return 1;
 }
 
 
-int B(char word[], char txt[]) {
+void B(char word[], char txt[]) {
     printf("Atbash Sequences: ");
     char lower[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
                     'u', 'v', 'w', 'x', 'y', 'z', '\0'};
@@ -158,7 +157,7 @@ int B(char word[], char txt[]) {
     printf("%s",ans2);
 }
 
-int C(char wordC[], char txtC[]) {
+void C(char wordC[], char txtC[]) {
     printf("\nAnagram Sequences: ");
     int counter = 0;
     int txtcounter;
